@@ -1,0 +1,17 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: aliceblue;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    text-decoration: none;
+}

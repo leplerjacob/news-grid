@@ -1,0 +1,46 @@
+:root {
+    /* Backgrounds */
+    --bg-primary: #474e6d;
+    --bg-secondary: #85754b;
+    --bg-dark: #2d3032;
+    --bg-light: #fefefe;
+
+
+    /* Text Colors */
+    --text-primary: #940400;
+    --text-primary: #85754b;
+    --text-dark: #333;
+    --text-light: #fefefe;
+    
+}
+
+.font-primary {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+/* Padding */
+.section-padding {
+    padding: 1rem;
+}
+
+.py-2 {
+    padding: 2rem;
+}
+
+
+/* Grid */
+
+.flex-grid .row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+}
+
+.flex-grid .column {
+    flex: 50%;
+    max-width: 50%;
+    max-height: 50%;
+    padding: 0 4px;
+}

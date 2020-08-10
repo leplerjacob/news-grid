@@ -1,0 +1,380 @@
+/****************************** Root/Base/Nav Styles START *******************************/
+
+                                /* :root Styling */
+:root {
+  /* Think of colors that will be the background for boxes behind text, as well as text color */
+  --primary-color: #c72727;
+  --secondary-color: #f99500;
+  --light-color: #f3f3f3;
+  --dark-color: #333;
+  --max-width: 1100px;
+}
+
+                                /* Base Styling */
+.category {
+  /* In this website, there are categories of topics like sports, entertainment, etc. Each of these categories will have buttons that have different colors */
+  --sports-color: #f99500;
+  --ent-color: #a66bbe;
+  --tech-color: #009cff;
+}
+
+                                /* Reset Styling */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    line-height: 1.5;
+    background: var(--light-color);
+}
+
+/* Any of these stylings are going to be considered 'base' styling */
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+/* This will set the image to span the entire box element it is contained within */
+img {
+    width: 100%;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: 'Staatliches', cursive;
+    margin-bottom: .55rem;
+    line-height: 1.3;
+}
+
+                                    /* Utilities */
+
+/* Because we will be using a container within the nav... */
+.container {
+    max-width: var(--max-width);
+    margin: auto;
+    padding: 0 2rem;
+    /* Set overflow so it always shows the content within and will not overflow the container */
+    overflow: hidden;
+}
+
+.category {
+    display: inline-block;
+    color: #fff;
+    /* Make the font smaller */
+    font-size: 0.55rem;
+    /* Make text uppercase */
+    text-transform: uppercase;
+    padding: 0.4rem 0.6rem;
+    border-radius: 15px;
+    margin-bottom: 0.5rem;
+}
+
+.category-sports { background: var(--sports-color) }
+.category-ent { background: var(--ent-color) }
+.category-tech { background: var(--tech-color) }
+
+.btn {
+    display: inline-block;
+    /* Take away the border in the case we apply class to actualy button */
+    border: none;
+    /* Default color will use variable for dark black color */
+    background: var(--dark-color);
+    color: #fff;
+    padding: 0.5rem 1.5rem;
+}
+
+.btn-light {
+    background: var(--light-color);
+}
+.btn-primary {
+    background: var(--primary-color);
+}
+.btn-secondary {
+    background: var(--secondary-color);
+}
+
+/* Button that has width that goes all the way across */
+.btn-block {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+.card {
+    background: #fff;
+    padding: 1rem;
+}                         
+
+/* Background Colors */
+.bg-dark {
+    background: var(--dark-color);
+    color: #fff;
+}
+
+.bg-primary {
+    background: var(--primary-color);
+    color: #fff;
+}
+.bg-secondary {
+    background: var(--secondary-color);
+    color: #fff;
+}
+
+/* Padding Y-axis */
+.py-1 {
+    padding: 1.5rem 0;
+}
+.py-2 {
+    padding: 2rem 0;
+}
+.py-3 {
+    padding: 3rem 0;
+}
+
+/* Padding all around */
+.p-1 {
+    padding: 1.5rem;
+}
+.p-2 {
+    padding: 2rem;
+}
+.p-3 {
+    padding: 3rem;
+}
+
+/* Here we are targeting any text tags that have a parent element, or itself having a bg-dark,bg-primary, or bg-secondary tag to have a white color text */
+.bg-dark h1,
+.bg-dark h2,
+.bg-dark h3,
+.bg-dark a,
+.bg-primary h1,
+.bg-primary h2,
+.bg-primary h3,
+.bg-primary a,
+.bg-secondary h1,
+.bg-secondary h2,
+.bg-secondary h3,
+.bg-secondary a {
+    color: #fff;
+}
+
+
+
+
+                                    /* Navigation */
+
+#main-nav {
+    background: #fff;
+    /* Because a navigation bar will be placed at top of the screen, we will set the position:sticky. That way, it will be placed at the top of the viewport screen as we scroll down */
+    position: sticky;
+    top: 0;
+    /* We set this so then the nav will always precede other elements, even if there are overlays (because we'll set other elements to be under) */
+    z-index: 2
+}
+
+/* Make the logo, social items, and the ul all grid items */
+#main-nav .container {
+    display: grid;
+    grid-template-columns: 6fr 3fr 2fr;
+    padding: 1rem;
+    align-items: center;
+}
+
+#main-nav .logo {
+    width: 180px;
+}
+ 
+#main-nav ul {
+    /* In order to push the ul links all the way over to the right */
+    justify-self: end;
+    /* We will display:flex the items of the ul */
+    display: flex;
+}
+
+#main-nav ul li a {
+    padding: 0.75rem;
+    font-weight: bold;
+}
+
+#main-nav ul li a.current{
+    background: var(--primary-color);
+    color: #fff;
+}
+
+#main-nav ul li a:hover {
+    background: var(--light-color);
+    color: #333;
+}
+
+#main-nav .social{
+    /* Center the social items to the middle of its grid */
+    justify-self: center;
+}
+
+/* I am going to add additional hover features to each of the social links... */
+#main-nav .social .fa-facebook:hover{
+    background: #fff; 
+    color: #3b5998;
+} 
+#main-nav .social .fa-twitter:hover{
+    background: #fff; 
+    color: #1da1f2;
+} 
+#main-nav .social .fa-instagram:hover{
+    background: #fff; 
+    color: var(--dark-color);
+} 
+#main-nav .social .fa-youtube:hover{
+    background: #fff; 
+    color: #ff0000;
+} 
+
+#main-nav .social i {
+    color: #777;
+    margin-right: .5rem;
+}
+
+
+
+/****************************** Root/Base/Nav Styles END *********************************/
+
+
+/****************************** Showcase Styles Start *********************************/
+
+/* Showcase */
+#showcase {
+    color: #fff;
+    /* We will add an overlay of an image on the showcase */
+    background: #333;
+    padding: 2rem;
+    position: relative;
+}
+
+#showcase:before {
+    content: '';
+    /* Here we are adding an image to span the entire #showcase. The image will have an opacity that will expose the background that is black */
+    background: url('../img/featured.jpg') no-repeat center center/cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0.4;
+}
+
+#showcase .showcase-container {
+    display: grid;
+    /* We will create two columns. However, because there is only one item, the grid will still create space for the other empty half */
+    grid-template-columns: repeat(2, 1fr);
+    /* Justify-content will center the text to the middle horizontally */
+    justify-content: center;
+    /* Align-items will center the text to the middle vertically */
+    align-items: center;
+    height: 50vh;
+}
+
+#showcase .showcase-content {
+    z-index: 1;
+}
+
+/* To move button away from p tag, we'll add a margin */
+#showcase .showcase-content p {
+  margin-bottom: 1rem;  
+}
+
+
+/****************************** Showcase Styles END *********************************/
+
+
+/****************************** Home Articles Start *********************************/
+
+/* This makes a grid with 3 columns and equal sizes */
+#home-articles .articles-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+/* This targets any element that is a first child of .articles-container */
+#home-articles .articles-container > *:first-child, 
+#home-articles .articles-container > *:last-child {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    /* This will make the first-child element to span across two item slots on the grid */
+    grid-column: 1 / span 2;
+    /* This centers both the image and the grid within that element-grid-item to the middle vertically */
+    align-items: center;
+}
+
+#home-articles .articles-container > *:last-child {
+    grid-column: 2 / span 2;
+}
+
+
+/****************************** Home Articles END *********************************/
+
+
+
+/****************************** Footer Start *********************************/
+
+#main-footer img {
+    width: 150px;
+}
+
+#main-footer a {
+    color: #fff;
+}
+
+#main-footer .footer-container > *:last-child {
+    background: #444;
+    grid-column: 1 / span 4;
+    padding: .5rem;
+}
+
+#main-footer .footer-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    text-align: center;
+    font-size: .74rem;
+}
+
+#main-footer .footer-container input[type='email'] {
+    width: 90%;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+#main-footer .footer-container input[type='submit'] {
+    width: 90%;
+}
+
+/****************************** Footer END *********************************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
